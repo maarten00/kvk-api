@@ -64,6 +64,27 @@ class Vestiging
         $this->links = $links;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'kvkNummer' => $this->kvkNummer,
+            'vestigingsnummer' => $this->vestigingsnummer,
+            'rsin' => $this->rsin,
+            'indNonMailing' => $this->indNonMailing,
+            'formeleRegistratiedatum' => $this->formeleRegistratiedatum,
+            'materieleRegistratie' => $this->materieleRegistratie,
+            'eersteHandelsnaam' => $this->eersteHandelsnaam,
+            'indHoofdvestiging' => $this->indHoofdvestiging,
+            'indCommercieleVestiging' => $this->indCommercieleVestiging,
+            'voltijdWerkzamePersonen' => $this->voltijdWerkzamePersonen,
+            'deeltijdWerkzamePersonen' => $this->deeltijdWerkzamePersonen,
+            'adressen' => $this->adressen,
+            'websites' => $this->websites,
+            'sbiActiviteiten' => $this->sbiActiviteiten,
+            'links' => $this->links,
+        ];
+    }
+
     public function getRsin(): ?string
     {
         return $this->rsin;

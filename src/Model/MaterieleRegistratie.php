@@ -17,6 +17,14 @@ class MaterieleRegistratie
         $this->datumEinde = $datumEinde;
     }
 
+    public function toArray()
+    {
+        return [
+            'datumAanvang' => $this->datumAanvang,
+            'datumEinde' => $this->datumEinde,
+        ];
+    }
+
     public function getDatumAanvang(): ?DateTime
     {
         return $this->datumAanvang;

@@ -30,6 +30,23 @@ class Eigenaar
         $this->links = $links;
     }
 
+    public function toArray()
+    {
+        $addressen = [];
+        foreach($this->adressen as $adres)
+        {
+            $addressen[] = $adres->toArray();
+        }
+        return
+        [
+            'rsin' => $this->rsin,
+            'rechtsvorm' => $this->rechtsvorm,
+            'uitgebreideRechtsvorm' => $this->uitgebreideRechtsvorm,
+            'adressen' => $addressen,
+            'links' => $this->links,
+        ];
+    }
+
     public function getRsin(): ?string
     {
         return $this->rsin;

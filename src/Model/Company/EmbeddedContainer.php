@@ -15,6 +15,14 @@ class EmbeddedContainer
         $this->eigenaar = $eigenaar;
     }
 
+    public function toArray()
+    {
+        return [
+            'hoofdvestiging' => $this->hoofdvestiging !== null ? $this->hoofdvestiging->toArray() : null,
+            'eigenaar' => $this->eigenaar !== null ? $this->eigenaar->toArray() : null,
+        ];
+    }
+
     public function getHoofdvestiging(): ?Vestiging
     {
         return $this->hoofdvestiging;

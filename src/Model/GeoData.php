@@ -25,6 +25,19 @@ class GeoData
         $this->rijksdriehoekZ = $rijksdriehoekZ;
     }
 
+    public function toArray()
+    {
+        return [
+            'addresseerbaarObjectId' => $this->addresseerbaarObjectId,
+            'nummerAanduidingId' => $this->nummerAanduidingId,
+            'gpsLatitude' => $this->gpsLatitude,
+            'gpsLongitude' => $this->gpsLongitude,
+            'rijksdriehoekX' => $this->rijksdriehoekX,
+            'rijksdriehoekY' => $this->rijksdriehoekY,
+            'rijksdriehoekZ' => $this->rijksdriehoekZ,
+        ];
+    }
+
     public function getAddresseerbaarObjectId(): ?string
     {
         return $this->addresseerbaarObjectId;

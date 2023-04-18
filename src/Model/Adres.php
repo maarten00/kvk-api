@@ -62,6 +62,30 @@ class Adres
         $this->geoData = $geoData;
     }
 
+    public function toArray()
+    {
+        return
+            [
+                'type' => $this->type,
+                'indAfgeschermd' => $this->indAfgeschermd,
+                'volledigAdres' => $this->volledigAdres,
+                'straatnaam' => $this->straatnaam,
+                'huisnummer' => $this->huisnummer,
+                'huisnummerToevoeging' => $this->huisnummerToevoeging,
+                'huisletter' => $this->huisletter,
+                'aanduidingBijHuisnummer' => $this->aanduidingBijHuisnummer,
+                'toevoegingAdres' => $this->toevoegingAdres,
+                'postcode' => $this->postcode,
+                'postbusnummer' => $this->postbusnummer,
+                'plaats' => $this->plaats,
+                'straatHuisnummer' => $this->straatHuisnummer,
+                'postcodeWoonplaats' => $this->postcodeWoonplaats,
+                'regio' => $this->regio,
+                'land' => $this->land,
+                'geoData' => $this->geoData->toArray(),
+            ];
+    }
+
     public function getIndAfgeschermd(): ?string
     {
         return $this->indAfgeschermd;
