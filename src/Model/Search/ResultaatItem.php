@@ -109,4 +109,10 @@ class ResultaatItem
     {
         return $this->huisnummer;
     }
+
+    public function getRaw(): ?array
+    {
+        return $this->raw;
+    }
+
 }
