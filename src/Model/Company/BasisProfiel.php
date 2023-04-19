@@ -25,8 +25,9 @@ class BasisProfiel
     private $links;
     /** @var EmbeddedContainer */
     private $_embedded;
+    private $raw;
 
-    public function __construct(string $kvkNummer, string $naam, ?string $indNonMailing,  ?DateTime $formeleRegistratiedatum, ?MaterieleRegistratie $materieleRegistratie, ?int $totaalWerkzamePersonen, ?string $statutaireNaam, ?EmbeddedContainer $embedded, array $handelsnamen = null, array $sbiActiviteiten = null, array $links = [])
+    public function __construct(string $kvkNummer, string $naam, ?string $indNonMailing,  ?DateTime $formeleRegistratiedatum, ?MaterieleRegistratie $materieleRegistratie, ?int $totaalWerkzamePersonen, ?string $statutaireNaam, ?EmbeddedContainer $embedded, array $handelsnamen = null, array $sbiActiviteiten = null, array $links = [], array $raw = [])
     {
         $this->kvkNummer = $kvkNummer;
         $this->indNonMailing = $indNonMailing;
@@ -39,6 +40,7 @@ class BasisProfiel
         $this->sbiActiviteiten = $sbiActiviteiten;
         $this->links = $links;
         $this->_embedded = $embedded;
+        $this->raw = $raw;
     }
 
     public function getKvkNummer(): string
@@ -94,5 +96,10 @@ class BasisProfiel
     public function getEmbedded(): ?EmbeddedContainer
     {
         return $this->_embedded;
+    }
+
+    public function getRaw(): array
+    {
+        return $this->raw;
     }
 }

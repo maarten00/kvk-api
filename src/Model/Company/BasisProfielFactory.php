@@ -25,6 +25,7 @@ class BasisProfielFactory extends AbstractFactory
             HandelsnaamFactory::createArray(self::pluckArray('handelsnamen', $response)),
             SbiActiviteitFactory::createArray(self::pluckArray('sbiActiviteiten', $response)),
             LinkFactory::createArray($response['links']),
+            $response,
         );
     }
 }
