@@ -19,11 +19,12 @@ class ResultaatItemFactory extends AbstractFactory
             self::pluckString('straatnaam', $response),
             self::pluckString('plaats', $response),
             self::pluckString('postcode', $response),
-            self::pluckString('huisnummer', $response),
+            self::pluckInteger('huisnummer', $response),
             self::pluckString('type', $response),
             self::pluckString('actief', $response),
             self::pluckString('vervallenNaam', $response),
             self::extractLinks($response['links']),
+            $response,
         );
     }
 
