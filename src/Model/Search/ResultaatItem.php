@@ -19,6 +19,7 @@ class ResultaatItem
     private $vervallenNaam;
     /** @var Link[] */
     private $links;
+    private $raw;
 
     public function __construct(
         string $kvkNumber,
@@ -32,7 +33,8 @@ class ResultaatItem
         ?string $type,
         ?string $actief,
         ?string $vervallenNaam,
-        ?array $links = null
+        ?array $links = null,
+        ?array $raw = null,
     ) {
         $this->kvkNummer = $kvkNumber;
         $this->rsin = $rsin;
@@ -46,6 +48,7 @@ class ResultaatItem
         $this->actief = $actief;
         $this->vervallenNaam = $vervallenNaam;
         $this->links = $links;
+        $this->raw = $raw;
     }
 
     public function getKvkNumber(): string
