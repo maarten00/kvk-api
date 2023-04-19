@@ -12,6 +12,7 @@ use Appvise\KvkApi\Model\Company\EigenaarFactory;
 use Appvise\KvkApi\Model\Company\VestigingFactory;
 use Appvise\KvkApi\Model\Company\BasisProfielFactory;
 use Appvise\KvkApi\Model\Company\VestigingListFactory;
+use Appvise\KvkApi\Model\Resultaat;
 
 final class KvkClient implements KvkClientInterface
 {
@@ -58,7 +59,7 @@ final class KvkClient implements KvkClientInterface
         return $result;
     }
 
-    public function search(QueryInterface $query)
+    public function search(QueryInterface $query): Resultaat
     {
         $response = $this->client->hitEndpoint("{$this->baseUrl}api/v1/zoeken", $query);
         $result = $this->decodeJson($response);

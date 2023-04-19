@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Appvise\KvkApi\Model;
 
+use Appvise\KvkApi\Model\Search\ResultaatItem;
+
 class Resultaat implements ResultaatInterface
 {
     private $pagina;
@@ -38,6 +40,9 @@ class Resultaat implements ResultaatInterface
         return $this->aantal;
     }
 
+    /**
+     * @return array<ResultaatItem>
+     */
     public function getResultaten(): array
     {
         return $this->resultaten;
